@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milis | Contactos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="container">
+    <header class="logo1 text-center">
+        <img src="img/milis.png" alt="">
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+          <a href="Pasteleria.html">Pasteleria</a>
+        <a href="Tortas.html">Tortas</a>
+        <a href="Postres.html">Postres</a>
+        <a href="Bocaditos.html">Bocaditos</a>
+        <a href="Especiales.html">Especiales</a>
+         <a href="Contacto.html">Contactos</a>
+    </nav>
+   <div class="contacto">
+  <h1 class="title text-center">Contáctanos</h1>
+
+  <form id="formContacto" class="formulario">
+  
+  <input type="text" id="nombre" placeholder="Nombre" required>
+
+  <input type="email" id="email" placeholder="Correo" required>
+
+  <input type="tel" id="celular" placeholder="Celular" required>
+
+  <input type="text" id="ruc" placeholder="RUC" required>
+
+  <textarea id="mensaje" placeholder="Escribe tu mensaje" rows="4" required></textarea>
+
+  <button type="submit">Enviar</button>
+
+</form>
+
+  <p id="respuesta" class="text-center"></p>
+</div>
+  <footer class="text-center">
+    Derechos Reservados Milis Pasteleria | 2026 | peru
+  </footer>
+</div>
+<script>
+document.getElementById("formContacto").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("email").value;
+  let celular = document.getElementById("celular").value;
+  let ruc = document.getElementById("ruc").value;
+  let mensaje = document.getElementById("mensaje").value;
+
+  if(nombre === "" || email === "" || celular === "" || ruc === "" || mensaje === "") {
+    alert("Completa todos los campos");
+    return;
+  }
+
+  document.getElementById("respuesta").innerText =
+    "Mensaje enviado correctamente ✅";
+
+  this.reset();
+});
+</script>
+</body>
+</html>
